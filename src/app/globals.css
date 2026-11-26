@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --background: #040816;
+  --foreground: #f1f5f9;
+}
+
+body {
+  background: radial-gradient(circle at 20% 0%, #0b1b44 0%, #040816 55%, #02040b 100%);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+}
+
+.ucl-glass {
+  background: rgba(9, 17, 42, 0.78);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(96, 165, 250, 0.22);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+.ucl-starburst {
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.16), transparent 55%),
+    radial-gradient(circle at 85% 20%, rgba(99, 102, 241, 0.14), transparent 40%);
+}
+
+@keyframes tickerScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: tickerScroll 28s linear infinite;
+}
+
+@keyframes goalPopIn {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.94);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-bounce-once {
+  animation: goalPopIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.35);
+  border-radius: 9999px;
+}
